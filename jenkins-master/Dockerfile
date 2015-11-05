@@ -7,6 +7,6 @@ ENV HOME $JENKINS_HOME
 
 USER root
 RUN apt-get update 
-RUN apt-get install -y graphviz npm
+RUN apt-get install -y graphviz npm vim
 
 USER jenkins
