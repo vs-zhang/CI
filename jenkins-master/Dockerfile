@@ -10,9 +10,10 @@ USER root
 RUN apt-get update 
 RUN apt-get install -y graphviz npm vim
 
-COPY start.sh $JENKINS_HOME/start.sh
-RUN chown -R 1000:1000 $JENKINS_HOME/start.sh
-RUN chmod +x $JENKINS_HOME/start.sh
+ENV share /usr/share/jenkins
+COPY start.sh $share/start.sh
+RUN chown -R 1000:1000 $share/start.sh
+RUN chmod +x $share/start.sh
 
 USER jenkins
-CMD bash $JENKINS_HOME/start.sh; 'bash'
+CMD bash $share/start.sh; 'bash'
