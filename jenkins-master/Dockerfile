@@ -2,7 +2,7 @@ FROM jenkins
 MAINTAINER "vincent" <vincentzhang1209@gmail.com>
 
 COPY plugins.txt /usr/share/jenkins/plugins.txt
-#RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 ENV HOME $JENKINS_HOME
 ENV JENKINS_KEY /var/jenkins_key
 

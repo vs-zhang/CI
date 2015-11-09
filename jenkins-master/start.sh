@@ -17,6 +17,10 @@ else
     echo "Private key already in $JENKINS_HOME/.ssh!"
 fi
 
+# start ssh-agent and add key to ssh-agent
+eval $(ssh-agent)
+ssh-add $JENKINS_HOME/.ssh/id_rsa
+
 # start jenkins
 java=java
 if test -n "$JAVA_HOME"; then
